@@ -13,7 +13,7 @@ app.get("/api", function(req, res){
     var result=  {
         slack_name: name,
         current_day: "Monday",
-        utc_time: new Date().toISOString(),
+        utc_time: new Date().toISOString.slice(0,-5)+"Z",
         track: track,
         github_file_url: "https://github.com/StMarkFx/backend1/commits?author=StMarkFx",
         github_repo_url: "https://github.com/StMarkFx/backend1",

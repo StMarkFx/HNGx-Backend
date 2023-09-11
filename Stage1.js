@@ -7,13 +7,16 @@ app.get("/api", function(req, res){
 
 	var name = req.query.slack_name
 	var track = req.query.track
-	
+	const time = new Date()
+  const day = time.getDay()
+
+ 
 	res.setHeader("Content-type","application/json");
     res.writeHead(200);
     var result=  {
         slack_name: name,
         current_day: "Monday",
-        utc_time: new Date().toISOString.slice(0,-5)+"Z",
+        utc_time: time.toISOString().slice(0,-5)+"Z",
         track: track,
         github_file_url: "https://github.com/StMarkFx/backend1/commits?author=StMarkFx",
         github_repo_url: "https://github.com/StMarkFx/backend1",
